@@ -2,7 +2,9 @@ const path = require('path')
 const express = require('express')
 const hbs = require('hbs')
 const app = express()
-app.listen(process.env.port | 8000);
+app.listen(process.env.PORT || 8000, function(){
+  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+});
 
 const pathStatic = path.join(__dirname, '../public');
 const pathTemplates = path.join(__dirname, '../templates/views');
