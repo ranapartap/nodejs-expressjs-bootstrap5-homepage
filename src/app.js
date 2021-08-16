@@ -2,7 +2,7 @@ const path = require('path')
 const express = require('express')
 const hbs = require('hbs')
 const app = express()
-app.listen(8000)
+app.listen(process.env.port | 8000);
 
 const pathStatic = path.join(__dirname, '../public');
 const pathTemplates = path.join(__dirname, '../templates/views');
